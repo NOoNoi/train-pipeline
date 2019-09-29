@@ -2,11 +2,9 @@ pipeline{
     agent any
     stages{
         stage("checkout"){
-            /*when{
-                expression{
-                    return env.
-                }
-            }*/
+            when{
+                env.GIT_BRANCH == 'develop'
+            }
             steps{
                 //checkout scm
                 git branch: 'develop',
